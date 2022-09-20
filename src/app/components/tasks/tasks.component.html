@@ -1,6 +1,12 @@
+<app-header class="mx-3"></app-header>
+<app-add-task (onAddTask)="addTask($event)" *ngIf="showAddTask"></app-add-task>
 <app-task-item
   *ngFor="let task of tasks"
   [task]="task"
   (deleteBtnClicked)="deleteTask(task)"
   (toggleClicked)="toggleTask(task)"
 ></app-task-item>
+
+<div class="text-center">
+  <a routerLink="/about">About</a>
+</div>
