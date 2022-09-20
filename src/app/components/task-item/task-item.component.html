@@ -1,0 +1,24 @@
+<div class="card mb-3" (dblclick)="onToggle(task)">
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex">
+        <div
+          class="p-1"
+          [ngClass]="{
+            'bg-success': task.reminder,
+            'bg-secondary': !task.reminder
+          }"
+        ></div>
+        <div class="mx-2">
+          <h3 class="mb-1">{{ task.text }}</h3>
+          <p class="text-muted fw-bold mb-0">{{ task.day }}</p>
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-link text-danger" (click)="onDelete(task)">
+          <fa-icon [icon]="faTimes"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
